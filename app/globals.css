@@ -1,0 +1,21 @@
+@import "../styles/design-system.css";
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  min-height: 100%;
+  margin: 0;
+}
+
+body {
+  font-family: Arial, "Assistant", "Heebo", sans-serif;
+  background: #071528;
+  color: var(--bb-text);
+}
+
+button {
+  font: inherit;
+}

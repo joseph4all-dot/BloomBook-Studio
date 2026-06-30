@@ -1,0 +1,115 @@
+.readerShell {
+  min-height: calc(100vh - 84px);
+  display: grid;
+  grid-template-columns: 72px minmax(0, 1fr) 72px;
+  align-items: center;
+  gap: 18px;
+  padding: 24px;
+}
+
+.readerPage {
+  justify-self: center;
+  width: min(520px, 78vw);
+  height: min(76vh, 760px);
+  background: #fff;
+  border-radius: 10px 28px 28px 10px;
+  overflow: hidden;
+  box-shadow: var(--bb-shadow);
+  position: relative;
+}
+
+.readerPage::after {
+  content: "";
+  position: absolute;
+  inset: 0 0 0 auto;
+  width: 36px;
+  background: linear-gradient(to left, rgba(0,0,0,.16), transparent);
+  pointer-events: none;
+}
+
+.readerPage--edge {
+  border-radius: 0;
+}
+
+.readerPage--edge::after {
+  display: none;
+}
+
+.readerPage img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: contain;
+  background: white;
+}
+
+.readerPage--edge img {
+  object-fit: cover;
+}
+
+.readerArrow {
+  width: 54px;
+  height: 54px;
+  border: 0;
+  border-radius: 50%;
+  cursor: pointer;
+  color: white;
+  font-size: 42px;
+  line-height: 1;
+  background: rgba(255, 255, 255, 0.16);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 12px 30px rgba(0,0,0,.22);
+}
+
+.readerArrow:disabled {
+  opacity: .28;
+  cursor: not-allowed;
+}
+
+.readerDots {
+  position: fixed;
+  bottom: 22px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  padding: 10px 14px;
+  border-radius: 999px;
+  background: rgba(255,255,255,.14);
+  backdrop-filter: blur(18px);
+}
+
+.readerDots button {
+  width: 10px;
+  height: 10px;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(255,255,255,.45);
+  cursor: pointer;
+}
+
+.readerDots button.isActive {
+  background: white;
+  transform: scale(1.35);
+}
+
+@media (max-width: 760px) {
+  .readerShell {
+    grid-template-columns: 1fr;
+    padding: 14px;
+  }
+
+  .readerArrow {
+    position: fixed;
+    bottom: 70px;
+    z-index: 10;
+  }
+
+  .readerArrow--prev { right: 18px; }
+  .readerArrow--next { left: 18px; }
+
+  .readerPage {
+    width: 92vw;
+    height: 72vh;
+  }
+}

@@ -1,0 +1,46 @@
+.readerToolbar {
+  position: sticky;
+  top: 14px;
+  z-index: 20;
+  width: min(1040px, calc(100vw - 28px));
+  margin: 14px auto 0;
+  border-radius: 999px;
+  padding: 10px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.readerToolbar__brand {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}
+
+.readerToolbar__brand strong {
+  color: white;
+}
+
+.readerToolbar__brand span {
+  color: var(--bb-muted);
+  font-size: .92rem;
+}
+
+.readerToolbar__actions {
+  display: flex;
+  gap: 6px;
+}
+
+.readerToolbar__actions button {
+  border: 0;
+  border-radius: 50%;
+  width: 38px;
+  height: 38px;
+  cursor: pointer;
+  color: white;
+  background: rgba(255,255,255,.10);
+}
+
+.readerToolbar__actions button:hover {
+  background: rgba(255,255,255,.20);
+}

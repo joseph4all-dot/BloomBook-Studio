@@ -1,0 +1,35 @@
+{
+  "id": "bloom",
+  "title": "מניצן לפריחה",
+  "subtitle": "מסע של אמונה, צמיחה ותקווה",
+  "theme": "bloom",
+  "background": "dynamic",
+  "cover": "/books/bloom/pages/cover.png",
+  "backCover": "/books/bloom/pages/back.png",
+  "pages": [
+    {
+      "id": "cover",
+      "title": "שער",
+      "src": "/books/bloom/pages/cover.png",
+      "edgeToEdge": true
+    },
+    {
+      "id": "thanks",
+      "title": "תודה על המעטפת",
+      "src": "/books/bloom/pages/page02.png",
+      "edgeToEdge": false
+    },
+    {
+      "id": "yishai",
+      "title": "הנס הפרטי שלנו – ישי",
+      "src": "/books/bloom/pages/page03.png",
+      "edgeToEdge": false
+    },
+    {
+      "id": "back",
+      "title": "מהלב פנימה",
+      "src": "/books/bloom/pages/back.png",
+      "edgeToEdge": true
+    }
+  ]
+}

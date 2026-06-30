@@ -1,0 +1,36 @@
+.dynamicBackground {
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  overflow: hidden;
+  background: #06101f;
+}
+
+.dynamicBackground img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: blur(36px) saturate(1.2);
+  transform: scale(1.12);
+  opacity: 0.56;
+  transition: opacity 420ms ease, filter 420ms ease;
+}
+
+.dynamicBackground__shade,
+.dynamicBackground__light {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.dynamicBackground__shade {
+  background:
+    linear-gradient(180deg, rgba(0, 0, 0, 0.32), rgba(0, 0, 0, 0.64)),
+    radial-gradient(circle at center, rgba(255, 255, 255, 0.16), transparent 42%);
+}
+
+.dynamicBackground__light {
+  background:
+    radial-gradient(circle at 52% 38%, rgba(255, 255, 255, 0.22), transparent 32%),
+    radial-gradient(circle at 15% 80%, rgba(24, 184, 236, 0.18), transparent 28%);
+}

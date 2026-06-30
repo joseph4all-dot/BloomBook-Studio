@@ -1,0 +1,37 @@
+:root {
+  --bb-blue: #0a5bd7;
+  --bb-cyan: #18b8ec;
+  --bb-gold: #e8c55b;
+  --bb-ink: #081525;
+  --bb-text: #f7fbff;
+  --bb-muted: rgba(247, 251, 255, 0.72);
+  --bb-glass: rgba(255, 255, 255, 0.12);
+  --bb-glass-border: rgba(255, 255, 255, 0.22);
+  --bb-shadow: 0 30px 90px rgba(0, 0, 0, 0.45);
+  --bb-radius-xl: 32px;
+  --bb-radius-pill: 999px;
+}
+
+.bb-glass {
+  background: var(--bb-glass);
+  border: 1px solid var(--bb-glass-border);
+  backdrop-filter: blur(18px);
+  box-shadow: 0 16px 46px rgba(0, 0, 0, 0.22);
+}
+
+.bb-button {
+  border: 0;
+  border-radius: var(--bb-radius-pill);
+  padding: 14px 24px;
+  font-weight: 800;
+  cursor: pointer;
+  color: #061a31;
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow: 0 16px 38px rgba(0, 0, 0, 0.25);
+  transition: transform 180ms ease, box-shadow 180ms ease, opacity 180ms ease;
+}
+
+.bb-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 22px 46px rgba(0, 0, 0, 0.3);
+}
