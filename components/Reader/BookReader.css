@@ -1,15 +1,21 @@
 .readerShell {
   min-height: calc(100vh - 84px);
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
   display: grid;
   grid-template-columns: 72px minmax(0, 1fr) 72px;
   align-items: center;
   gap: 18px;
   padding: 24px;
+  overflow-x: clip;
 }
 
 .bookStage {
   justify-self: center;
   perspective: 1800px;
+  max-width: 100%;
+  min-width: 0;
 }
 
 .readerPage {
