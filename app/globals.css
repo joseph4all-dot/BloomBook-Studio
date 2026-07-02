@@ -19,3 +19,7 @@ body {
 button {
   font: inherit;
 }
+@import "../components/Background/DynamicBackground.css";
+@import "../components/Cover/CinematicCover.css";
+@import "../components/Reader/BookReader.css";
+@import "../components/Toolbar/ReaderToolbar.css";

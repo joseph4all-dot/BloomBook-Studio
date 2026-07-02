@@ -6,11 +6,9 @@ import { DynamicBackground } from "@/components/Background/DynamicBackground";
 import { CinematicCover } from "@/components/Cover/CinematicCover";
 import { BookReader } from "@/components/Reader/BookReader";
 import { ReaderToolbar } from "@/components/Toolbar/ReaderToolbar";
+import DebugPanel from "@/components/UI/DebugPanel";
+import { useImagePreloader } from "@/components/Reader/useImagePreloader";
 
-import "@/components/Background/DynamicBackground.css";
-import "@/components/Cover/CinematicCover.css";
-import "@/components/Reader/BookReader.css";
-import "@/components/Toolbar/ReaderToolbar.css";
 
 export default function HomePage() {
   const book = useMemo(() => getBook(), []);
@@ -18,6 +16,7 @@ export default function HomePage() {
   const [currentPage, setCurrentPage] = useState(0);
 
   const backgroundImage = isOpen ? book.pages[currentPage].src : book.cover;
+  const preload = useImagePreloader(book.pages.map((page) => page.src));
 
   function nextPage() {
     setCurrentPage((page) => Math.min(book.pages.length - 1, page + 1));
@@ -62,6 +61,24 @@ export default function HomePage() {
           />
         </>
       )}
+{isOpen && !preload.isReady && (
+  <div
+    style={{
+      position: "fixed",
+      inset: 0,
+      zIndex: 9998,
+      display: "grid",
+      placeItems: "center",
+      background: "rgba(0,0,0,.45)",
+      color: "white",
+      fontSize: 18,
+      backdropFilter: "blur(10px)",
+    }}
+  >
+    טוען עמודים... {preload.loadedCount}/{preload.totalCount}
+  </div>
+)}
+      {process.env.NODE_ENV === "development" && <DebugPanel />}
     </>
   );
 }

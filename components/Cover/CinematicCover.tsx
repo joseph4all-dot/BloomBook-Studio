@@ -8,10 +8,16 @@ type CinematicCoverProps = {
 export function CinematicCover({ title, subtitle, cover, onOpen }: CinematicCoverProps) {
   return (
     <section className="openingScreen">
-      <div className="openingScreen__book" aria-label={title}>
-        <div className="openingScreen__bookSpine" />
-        <img src={cover} alt={title} />
-      </div>
+    <div className="openingScreen__bookWrap">
+  <div className="openingScreen__bookEcho" aria-hidden="true">
+    <img src={cover} alt="" />
+  </div>
+
+  <div className="openingScreen__book" aria-label={title}>
+    <div className="openingScreen__bookSpine" />
+    <img src={cover} alt={title} />
+  </div>
+</div>
 
       <div className="openingScreen__copy">
         <h1>{title}</h1>
